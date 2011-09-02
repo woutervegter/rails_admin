@@ -5,10 +5,9 @@ require File.expand_path('../utils', __FILE__)
 module RailsAdmin
   class UninstallMigrationsGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
+    include Generators::Utils::InstanceMethods
+    extend Generators::Utils::ClassMethods
     source_root File.expand_path('../templates', __FILE__)
-    class << self
-      include Generators::Utils
-    end
 
     desc "RailsAdmin uninstall"
 
