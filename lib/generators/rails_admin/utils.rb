@@ -3,13 +3,13 @@ module RailsAdmin
     module Utils
       module InstanceMethods
         def display(output, color = :green)
-          say("------------  #{output}", color)
+          say("           -  #{output}", color)
         end
     
-        def ask_for(wording, default_value, existing_value)
-          existing_value.present? ? 
-            display("Using [#{existing_value}] for question '#{wording}'") && existing_value : 
-            ask("============  #{wording} Press <enter> for [#{default_value}] >", :yellow).presence || default_value
+        def ask_for(wording, default_value = nil, override_if_present_value = nil)
+          override_if_present_value.present? ? 
+            display("Using [#{override_if_present_value}] for question '#{wording}'") && override_if_present_value : 
+            ask("           ?  #{wording} Press <enter> for [#{default_value}] >", :yellow).presence.try(:parameterize) || default_value
         end
       end
       
