@@ -98,7 +98,7 @@ module RailsAdmin
             puts "Great! You have devise installed and setup!"
           else
             puts "Great you have devise installed, but not set up!"
-            set_devise
+            puts 'skipping set_devise'
           end
         end
 
