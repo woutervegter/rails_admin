@@ -15,6 +15,7 @@ module RailsAdmin
           else
             puts "Please put gem 'devise' into your Gemfile"
           end
+          
 
           copy_locales_files
           copy_assets_files
@@ -81,7 +82,7 @@ module RailsAdmin
           else
             puts "Looks like you don't have devise install! We'll install it for you!"
             `rails g devise:install`
-            set_devise
+            puts 'skipping set_devise...'
           end
         end
 
